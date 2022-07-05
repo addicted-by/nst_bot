@@ -76,13 +76,13 @@ class StyleTransformer():
     def __init__(self, content_img: torch.Tensor, style_img: torch.Tensor, imsize: int=150):
         super(StyleTransformer, self).__init__()
         print("Start model")
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         if os.path.exists("./data/models/vgg19.pth"):
             self.cnn = models.vgg19()
             self.cnn.load_state_dict(torch.load("./data/models/vgg19.pth"))
         else:
             self.cnn = models.vgg19(pretrained=True)
         print("Model is ready")
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.imsize = imsize
         self.cnn = self.cnn.features.to(self.device).eval()
         sizes = Image.open(io.BytesIO(content_img)).size
