@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  prefinal:
+    build:
+      context: "."
+      dockerfile: Dockerfile
+    environment:
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+    
+    restart: always
