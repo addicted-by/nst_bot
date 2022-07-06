@@ -44,7 +44,7 @@ docker-compose up
 
 <a name = "step4"></a>
 # Usage
-![alt text](sample2.gif)
+![alt text](sample3.gif)
 
 <a name = "step5"></a>
 # Features
@@ -57,4 +57,4 @@ Database: sqlite
 Neural network: PyTorch
 
 Train dataset: coco dataset
-![alt text](sample3.gif)
+![alt text](sample2.gif)
